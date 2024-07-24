@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: url('snake-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        #gameContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        #gameCanvas {
+            border: 20px solid #000000;
+            background-color: #83b378;
+        }
+
+        #welcomeMessage {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #4CAF50; /* Green color */
+            font-size: 48px;
+            font-weight: bold;
+            z-index: 3;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #e0970f, #000000); /* Green gradient */
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        #leaderboard {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 3;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #leaderboard div {
+            font-size: 28px;
+            color: #FFD700; /* Gold color */
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        #leaderboard ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #leaderboard li {
+            font-size: 22px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #FFEB3B, #FBC02D); /* Yellow gradient */
+            border-radius: 5px;
+            padding: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #nameInput {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            color: #e8dc2a;
+            font-size: 24px;
+            z-index: 3;
+            text-align: center;
+        }
+
+        #nameInput input {
+            font-size: 20px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #nameInput button {
+            font-size: 20px;
+            padding: 5px 10px;
+            background: #4CAF50; /* Green color */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #nameInput button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="welcomeMessage">Welcome to Snake Game created by Ashutosh</div>
+        <div id="leaderboard">
+            <div>Leaderboard</div>
+            <ul id="scoreList"></ul>
+        </div>
+        <div id="nameInput">
+            <input type="text" id="playerName" placeholder="Enter your name" />
+            <button onclick="submitName()">Submit Name</button>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>
